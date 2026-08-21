@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/*
+  Project DNA design tokens.
+  These generate Tailwind utilities directly: bg-surface, text-muted,
+  border-border, etc. Keep this file as the single source of truth for
+  the palette described in the design brief.
+*/
+@theme {
+  --color-bg: #08090a;
+  --color-surface: #101214;
+  --color-elevated: #16191c;
+  --color-ink: #f4f7f5;
+  --color-muted: #8b9490;
+  --color-muted-dim: #5c6461;
+  --color-accent: #b7f34a;
+  --color-accent-dim: #8fc236;
+  --color-cyan: #5de2e7;
+  --color-border: #252a2d;
+  --color-border-soft: #1b1f22;
+  --color-danger: #e7746b;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@keyframes dna-shimmer {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.5; }
+}
+.animate-dna-shimmer {
+  animation: dna-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes dna-pulse-ring {
+  0% { opacity: 0.5; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.15); }
+}
+.animate-dna-pulse-ring {
+  animation: dna-pulse-ring 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dna-shimmer,
+  .animate-dna-pulse-ring {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
