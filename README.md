@@ -1,25 +1,18 @@
 ```markdown
-# Project DNA 🧬
+# CodeDNA  
 
 > A graph-powered explorer for discovering the relationships between software projects, technologies, concepts, features, and developers.
 
-Project DNA treats a software project as more than a name and a description — it's
+CodeDNA treats a software project as more than a name and a description — it's
 a node in a graph, connected to the technologies it uses, the concepts it
 implements, the features it provides, and the developers who built it.
 The app lets you explore those connections instead of just listing them.
-
-**Status:** the UI, routing, and data model below are fully built and running
-against a realistic **mock dataset** (`lib/data.ts`). The app is architected
-so a real graph database is a drop-in swap — see
-[Connecting a real backend](#connecting-a-real-backend-cognodb--neo4j) — but
-that connection **is not wired up yet**. Nothing in this repo currently talks
-to CognoDB.
 
 ---
 
 ## Overview
 
-Project DNA lets you:
+CodeDNA lets you:
 
 - Explore projects in a software ecosystem
 - Discover the technologies used by each project
@@ -70,7 +63,7 @@ Project A                    Project B
          Node.js  ◄────────────────
 ```
 
-Project DNA traverses this to discover A and B share Node.js, then combines
+CodeDNA traverses this to discover A and B share Node.js, then combines
 that with shared concepts and features to compute a similarity score — see
 `lib/graph.ts::similarity()`.
 
@@ -166,7 +159,7 @@ app/
   page.tsx                        Home: search + stats + ecosystem preview
   projects/
     page.tsx                      All projects
-    [id]/page.tsx                 Project DNA page (graph + sections)
+    [id]/page.tsx                 CodeDNA page (graph + sections)
     [id]/similar/page.tsx         Explainable "find similar" results
     [id]/compare/page.tsx         Pick a second project to compare
   compare/page.tsx                Comparison result (?a=id&b=id)
